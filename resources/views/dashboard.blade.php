@@ -63,8 +63,9 @@
                 </thead>
                 <tbody class="text-white/80">
                     <!-- Row 1 -->
+                     @foreach($produks as $produk)
                     <tr class="border-b border-white/5 hover:bg-white/5 transition">
-                        @foreach($produks as $produk)
+                       
                         <td class="p-5 font-bold">{{$loop->iteration}}</td>
                         <td class="p-5 font-bold">
                             <img src="{{ asset('storage/' . $produk->gambar) }}" width="60"
@@ -87,8 +88,9 @@
                                 <button type="submit" class="text-red-400 hover:underline" onclick="return confirm('Apakah Anda yakin ingin menghapus produk ini ?')">Delete</button>
                             </form>
                         </td>
-                        @endforeach
+                      
                     </tr>
+                      @endforeach
                 </tbody>
             </table>
         </div>
@@ -97,7 +99,7 @@
 
 <script>
    document.getElementById('closeButton').onclick = function() {
-       document.getElementById('close-alert').remove(); // Removes the div
+       document.getElementById('close-alert').remove(); 
    };
 </script>
 </body>
